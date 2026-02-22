@@ -14,6 +14,9 @@ importers:
       cli-table3:
         specifier: ^0.6.5
         version: 0.6.5
+      dayjs:
+        specifier: ^1.11.19
+        version: 1.11.19
       ink:
         specifier: ^4.1.0
         version: 4.4.1(@types/react@18.3.28)(react@18.3.1)
@@ -629,6 +632,9 @@ packages:
   date-time@3.1.0:
     resolution: {integrity: sha512-uqCUKXE5q1PNBXjPqvwhwJf9SwMoAHBgWJ6DcrnS5o+W2JOiIILl0JEdVD8SGujrNS02GGxgwAg2PN2zONgtjg==}
     engines: {node: '>=6'}
+
+  dayjs@1.11.19:
+    resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -3242,6 +3248,8 @@ snapshots:
   date-time@3.1.0:
     dependencies:
       time-zone: 1.0.0
+
+  dayjs@1.11.19: {}
 
   debug@3.2.7:
     dependencies:

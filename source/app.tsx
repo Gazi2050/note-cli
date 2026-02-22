@@ -3,6 +3,8 @@ import { Box, Text, useStdout } from 'ink';
 import BigText from 'ink-big-text';
 import Table from './components/table/Table.js';
 import CreateAction from './actions/create-action/CreateAction.js';
+import ReadAction from './actions/read-action/ReadAction.js';
+import UpdateAction from './actions/update-action/UpdateAction.js';
 
 interface AppProps {
 	flags: {
@@ -31,6 +33,14 @@ export default function App({ flags }: AppProps) {
 
 	if (flags.create) {
 		return <CreateAction />;
+	}
+
+	if (flags.read) {
+		return <ReadAction />;
+	}
+
+	if (flags.update) {
+		return <UpdateAction />;
 	}
 
 	return (

@@ -19,14 +19,32 @@ export const generateTableString = (
         }
     });
 
-    const availableWidth = width - 6;
-    const usedWidth = colWidths.reduce((a, b) => a + b, 0) + colWidths.length + 1;
+    // Calculate total requested width and number of borders
+    const borderCount = activeCols.length + 1;
+    const requestedWidth = colWidths.reduce((a, b) => a + b, 0);
+    const totalMinimumWidth = borderCount + activeCols.length * 5; // Absolute minimum: borders + 5 chars per col
 
-    // The last column always takes the remaining space
+    // Effective width for columns after borders
+    const colBudget = Math.max(totalMinimumWidth - borderCount, width - borderCount);
+
+    if (requestedWidth > colBudget) {
+        // Scale down proportionally
+        const scale = colBudget / requestedWidth;
+        for (let i = 0; i < colWidths.length; i++) {
+            const currentWidth = colWidths[i] ?? 0;
+            colWidths[i] = Math.max(5, Math.floor(currentWidth * scale));
+        }
+    }
+
+    // After potential scaling, ensure the last column fills remaining space
+    const currentUsedColWidth = colWidths.reduce((a, b) => a + b, 0);
     if (colWidths.length > 0) {
         const lastIdx = colWidths.length - 1;
-        const lastWidth = colWidths[lastIdx] || 0;
-        colWidths[lastIdx] = Math.max(15, availableWidth - (usedWidth - lastWidth));
+        const remaining = colBudget - currentUsedColWidth;
+        if (remaining > 0) {
+            const lastColWidth = colWidths[lastIdx] ?? 0;
+            colWidths[lastIdx] = lastColWidth + remaining;
+        }
     }
 
     const t = new Table3({
