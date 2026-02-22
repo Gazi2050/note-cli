@@ -45,7 +45,7 @@ export default function App({flags, input}: AppProps) {
 	return (
 		<Box flexDirection="column" paddingY={1}>
 			{width > 80 ? (
-				<BigText text="Note CLI" />
+				<BigText text="NOTELY CLI" />
 			) : (
 				<Box paddingY={1}>
 					<Text bold color="cyan">

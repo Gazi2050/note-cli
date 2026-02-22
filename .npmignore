@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Except the publish-worthy files
+!dist
+!package.json
+!readme.md
+!LICENSE

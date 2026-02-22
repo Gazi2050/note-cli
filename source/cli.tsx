@@ -7,7 +7,7 @@ import App from './app.js';
 const cli = meow(
 	`
 	Usage
-	  $ note-cli
+	  $ notely-cli
 
 	Options
 		--create, -c  Create a new note
@@ -16,8 +16,8 @@ const cli = meow(
 		--read,   -r  Read/List notes
 
 	Examples
-	  $ note-cli --create
-	  $ note-cli -c
+	  $ notely-cli --create
+	  $ notely-cli -c
 	`,
 	{
 		importMeta: import.meta,

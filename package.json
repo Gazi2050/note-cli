@@ -1,13 +1,19 @@
 {
-	"name": "note-cli",
+	"name": "notely-cli",
 	"version": "1.0.0",
 	"description": "Your minimal note-taking tool for the terminal.",
 	"author": "gazi2050",
-	"homepage": "https://github.com/Gazi2050/note-cli",
+	"homepage": "https://notely-cli.vercel.app",
 	"repository": {
-		"url": "https://github.com/Gazi2050/note-cli"
+		"url": "https://github.com/Gazi2050/notely-cli"
 	},
 	"license": "MIT",
+	"keywords": [
+		"package",
+		"note",
+		"cli",
+		"terminal"
+	],
 	"bin": "dist/cli.js",
 	"type": "module",
 	"engines": {

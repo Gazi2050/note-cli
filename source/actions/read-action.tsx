@@ -145,7 +145,7 @@ export default function ReadAction({id}: ReadActionProps) {
 				<Box paddingX={1}>
 					<Text color="gray">No notes yet. </Text>
 					<Text bold color="green">
-						note-cli -c
+						notely-cli -c
 					</Text>
 					<Text color="gray"> to create one.</Text>
 				</Box>
@@ -170,7 +170,7 @@ export default function ReadAction({id}: ReadActionProps) {
 			<Box marginTop={1}>
 				<Text dimColor>Run </Text>
 				<Text bold dimColor>
-					note-cli -r {'<id>'}
+					notely-cli -r {'<id>'}
 				</Text>
 				<Text dimColor> to view details</Text>
 			</Box>

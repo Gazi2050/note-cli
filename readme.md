@@ -1,11 +1,11 @@
-# note-cli
+# Notely-cli
 
 > A minimal, interactive note-taking tool for the terminal.
 
 ## Install
 
 ```bash
-npm install --global note-cli
+npm install --global notely-cli
 ```
 
 > **Requirements:** Node.js ≥ 16
@@ -13,7 +13,7 @@ npm install --global note-cli
 ## Usage
 
 ```
-note-cli [flag] [id]
+notely-cli [flag] [id]
 ```
 
 | Flag            | Shorthand | Description          |
@@ -30,43 +30,43 @@ note-cli [flag] [id]
 **Create a note**
 
 ```bash
-note-cli --create
-note-cli -c
+notely-cli --create
+notely-cli -c
 ```
 
 **List all notes**
 
 ```bash
-note-cli --read
-note-cli -r
+notely-cli --read
+notely-cli -r
 ```
 
 **Read a specific note**
 
 ```bash
-note-cli --read fc4c754d4
-note-cli -r fc4c754d4
+notely-cli --read fc4c754d4
+notely-cli -r fc4c754d4
 ```
 
 **Update a note**
 
 ```bash
-note-cli --update
-note-cli -u
+notely-cli --update
+notely-cli -u
 ```
 
 **Delete a note**
 
 ```bash
-note-cli --delete fc4c754d4
-note-cli -d fc4c754d4
+notely-cli --delete fc4c754d4
+notely-cli -d fc4c754d4
 ```
 
 **Delete all notes**
 
 ```bash
-note-cli --delete all
-note-cli -d all
+notely-cli --delete all
+notely-cli -d all
 ```
 
 ## Notes
@@ -74,7 +74,3 @@ note-cli -d all
 - Notes are stored locally in `db.json` in the working directory.
 - Title limit: **50 characters**
 - Content limit: **300 characters**
-
-## License
-
-MIT
