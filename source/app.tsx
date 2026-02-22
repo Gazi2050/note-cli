@@ -1,9 +1,12 @@
 import React, { useMemo } from 'react';
-import { Box, Text } from 'ink';
+import { Box, Text, useStdout } from 'ink';
 import BigText from 'ink-big-text';
 import Table from './components/table/Table.js';
 
 export default function App() {
+	const { stdout } = useStdout();
+	const width = stdout?.columns || 80;
+
 	const columns = useMemo(() => [
 		{ head: 'Command', index: 0, width: 12 },
 		{ head: 'Description', index: 1, width: 30 },
@@ -18,7 +21,15 @@ export default function App() {
 
 	return (
 		<Box flexDirection="column">
-			<BigText text="Note CLI" />
+			{width > 80 ? (
+				<BigText text="Note CLI" />
+			) : (
+				<Box paddingY={1}>
+					<Text bold color="cyan" backgroundColor="black">
+						{" "}NOTE CLI{" "}
+					</Text>
+				</Box>
+			)}
 			<Text>Welcome to Note CLI ✍️</Text>
 			<Box marginTop={1}>
 				<Table data={data} columns={columns} />
