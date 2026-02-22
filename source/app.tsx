@@ -22,15 +22,16 @@ export default function App({ flags, input }: AppProps) {
 	const width = stdout?.columns || 80;
 
 	const columns = useMemo(() => [
-		{ head: 'Flag', index: 0, width: 10 },
-		{ head: 'Description', index: 1, width: 30 },
+		{ head: 'Flag', index: 0, width: 14 },
+		{ head: 'Shorthand', index: 1, width: 12 },
+		{ head: 'Description', index: 2, width: 30 },
 	], []);
 
 	const helpData = [
-		['-c', 'Create a new note'],
-		['-r', 'List / read notes'],
-		['-u', 'Update a note'],
-		['-d', 'Delete a note'],
+		['--create', '-c', 'Create a new note'],
+		['--read', '-r', 'List / read notes'],
+		['--update', '-u', 'Update a note'],
+		['--delete', '-d', 'Delete a note'],
 	];
 
 	if (flags.create) return <CreateAction />;
@@ -51,7 +52,7 @@ export default function App({ flags, input }: AppProps) {
 
 			{/* Tagline */}
 			<Box marginBottom={1}>
-				<Text color="gray">Your minimal note-taking tool for the terminal.</Text>
+				<Text color="cyan">Your minimal note-taking tool for the terminal.</Text>
 			</Box>
 
 			{/* Divider */}
