@@ -20,12 +20,12 @@ export default function App() {
 	];
 
 	return (
-		<Box flexDirection="column">
+		<Box flexDirection="column" paddingBottom={1}>
 			{width > 80 ? (
 				<BigText text="Note CLI" />
 			) : (
 				<Box paddingY={1}>
-					<Text bold color="cyan" backgroundColor="black">
+					<Text bold backgroundColor="black">
 						{" "}NOTE CLI{" "}
 					</Text>
 				</Box>
